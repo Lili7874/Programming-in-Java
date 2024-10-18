@@ -1,0 +1,26 @@
+package kalkulator;
+import java.util.Scanner;
+public class Kalkulator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double a, b;
+        double result = 0.0;
+
+        System.out.print("Podaj pierwszą liczbę zmiennoprzecinkową: ");
+        a = scanner.nextDouble();
+
+        System.out.print("Podaj drugą liczbę zmiennoprzecinkową: ");
+        b = scanner.nextDouble();
+
+        int bInt = (int) Math.abs(b); // Używamy wartości bezwzględnej, aby uniknąć problemu z liczbami ujemnymi
+
+        for (int i = 0; i < bInt; i++) {
+            result += a;
+        }
+
+        result += (b - bInt) * a;
+
+        System.out.printf("Iloczyn liczb %.2f i %.2f wynosi: %.2f%n", a, b, result);
+    }
+}
